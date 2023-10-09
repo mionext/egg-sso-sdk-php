@@ -1,5 +1,5 @@
 {
-    "name": "zw/sso-php",
+    "name": "egg/sso-php",
     "description": "A sso PHP lib",
     "type": "library",
     "require": {
