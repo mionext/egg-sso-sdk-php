@@ -1,0 +1,22 @@
+{
+    "name": "zw/sso-php",
+    "description": "A sso PHP lib",
+    "type": "library",
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Egg\\Foundation\\Sso\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "enhe",
+            "email": "enhe@zhangwen.cn"
+        }
+    ],
+    "minimum-stability": "stable"
+}
