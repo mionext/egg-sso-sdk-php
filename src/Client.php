@@ -2,10 +2,10 @@
 
 namespace Egg\Foundation\Sso;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as HttpClient;
 use Psr\Http\Message\ResponseInterface;
 
-class SsoClient
+class Client
 {
     private $config = [
         'secret' => '',
@@ -92,6 +92,6 @@ class SsoClient
             $options['headers']['content-type'] = 'application/json';
         }
 
-        return (new Client($this->config['guzzle_options']))->request($method, ltrim($uri, '/'), $options);
+        return (new HttpClient($this->config['guzzle_options']))->request($method, ltrim($uri, '/'), $options);
     }
 }
