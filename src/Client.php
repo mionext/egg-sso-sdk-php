@@ -24,6 +24,15 @@ class Client
         $this->config = array_merge($this->config, $config);
     }
 
+    /**
+     * @return $this
+     */
+    public function development()
+    {
+        $this->config['guzzle_options']['base_uri'] = 'https://t-cas-api.52ezm.cn/v1/api/';
+
+        return $this;
+    }
 
     /**
      * 获取系统角色
