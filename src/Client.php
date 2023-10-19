@@ -15,23 +15,16 @@ class Client
         ]
     ];
 
-    public function __construct(array $config = [])
+    public function __construct(bool $debug = false, string $secret = null)
     {
-        if (empty($config['secret'])) {
-            $config['secret'] = getenv('SSO_SECRET');
+        if (is_null($secret)) {
+            $this->config['secret'] = getenv('SSO_SECRET');
         }
 
-        $this->config = array_merge($this->config, $config);
-    }
-
-    /**
-     * @return $this
-     */
-    public function development()
-    {
-        $this->config['guzzle_options']['base_uri'] = 'https://t-cas-api.52ezm.cn/v1/api/';
-
-        return $this;
+        if ($debug) {
+            $this->config['guzzle_options']['base_uri'] =
+                'https://t-cas-api.52ezm.cn/v1/api/';
+        }
     }
 
     /**
