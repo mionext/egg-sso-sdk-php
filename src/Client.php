@@ -45,9 +45,9 @@ class Client
      * @return array
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function ticket2session(string $ticket): array
+    public function ticket2session(string $ticket, int $ttl = 0): array
     {
-        return json_decode($this->request('token?ticket=' . $ticket)
+        return json_decode($this->request(sprintf("token?ticket=%s&ttl=%d", $ticket, $ttl))
             ->getBody()->getContents(), true);
     }
 
