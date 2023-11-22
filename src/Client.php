@@ -15,13 +15,14 @@ class Client
         ]
     ];
 
-    public function __construct(bool $debug = false, string $secret = null)
+    public function __construct(bool $dev = false, string $secret = null)
     {
         if (is_null($secret)) {
-            $this->config['secret'] = getenv('SSO_SECRET');
+            $secret = getenv('SSO_SECRET');
         }
 
-        if ($debug) {
+        $this->config['secret'] = $secret;
+        if ($dev) {
             $this->config['guzzle_options']['base_uri'] =
                 'https://t-cas-api.52ezm.cn/v1/api/';
         }
