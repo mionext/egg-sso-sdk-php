@@ -41,6 +41,8 @@ class RoleType
         RoleVip = 'vip',                            // VIP
         RoleWriter = 'writer',                      // 编剧
         RoleCustomer = 'customer',                  // 客服
+        RoleAudit = 'audit',                        // 审核
+        RoleProducer = 'producer',                  // 制作
 
         _ = -1;
 
